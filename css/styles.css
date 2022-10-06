@@ -593,32 +593,28 @@ body {
   position: relative;
 }
 
-.project-thumb::before {
-  content: "";
+.project-overlay-text {
   position: absolute;
+  display: flex;
+  color: var(--white-color);
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding-left: 24px;
+  padding-right: 24px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: var(--project-overlay);
   width: 100%;
   height: 100%;
-  background-color: var(--project-overlay);
-  opacity: 0;
-}
-
-.project-thumb-text {
-  position: absolute;
-  color: var(--white-color);
-  top: 63px;
-  left: 24px;
-  width: 322px;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.55;
   opacity: 0;
 }
 
-.project-thumb:hover::before {
-  opacity: 1;
-}
-
-.project-thumb-text:hover::before {
+.project-overlay-text:hover, .project-overlay-text:focus {
   opacity: 1;
 }
 
