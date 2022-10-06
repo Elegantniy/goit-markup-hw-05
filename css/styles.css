@@ -553,7 +553,14 @@ body {
 .project-link:hover,
 .project-link:focus {
   box-shadow: var(--shadow-project);
+  /* transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
 }
 .project-info {
   padding: 20px 24px;
+}
+
+:hover, :focus {
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
