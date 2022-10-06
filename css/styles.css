@@ -27,7 +27,8 @@ font-family: 'Roboto', sans-serif; */
   --soc-icon: #afb1b8;
   --header-icon: #757575;
   --project-overlay: rgba(33, 150, 243, 0.9);
-  --modal-background:rgba(0, 0, 0, 0.2);
+  --modal-background: rgba(0, 0, 0, 0.2);
+  --features-info-bckg:rgba(47, 48, 58, 0.8);
 }
 /* index.html */
 body {
@@ -597,7 +598,7 @@ body {
   opacity: 1;
 }
 
-.project-thumb-text:hover::before{
+.project-thumb-text:hover::before {
   opacity: 1;
 }
 
@@ -622,4 +623,25 @@ body {
   min-width: 581px;
   background-color: var(--white-color);
   padding: 10px;
+}
+
+.about-thumb {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.about-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: var(--features-info-bckg);
+  width: 100%;
+  height: 70px;
+margin-bottom: 0;
+  padding: 27px 0;
+  font-weight: 700;
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--white-color);
 }
