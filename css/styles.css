@@ -26,6 +26,8 @@ font-family: 'Roboto', sans-serif; */
     0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
   --soc-icon: #afb1b8;
   --header-icon: #757575;
+  --project-overlay: rgba(33, 150, 243, 0.9);
+  --modal-background:rgba(0, 0, 0, 0.2);
 }
 /* index.html */
 body {
@@ -61,6 +63,11 @@ body {
   width: 1200px;
   margin: 0 auto;
   padding: 0px 15px;
+}
+:hover,
+:focus {
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* header */
@@ -193,6 +200,7 @@ body {
   border-radius: 4px;
   padding: 10px 32px;
   border-style: none;
+  cursor: pointer;
 }
 .hero-button:hover,
 .hero-button:focus {
@@ -560,7 +568,58 @@ body {
   padding: 20px 24px;
 }
 
-:hover, :focus {
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+.project-thumb {
+  position: relative;
+}
+
+.project-thumb::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--project-overlay);
+  opacity: 0;
+}
+
+.project-thumb-text {
+  position: absolute;
+  color: var(--white-color);
+  top: 63px;
+  left: 24px;
+  width: 322px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55;
+  opacity: 0;
+}
+
+.project-thumb:hover::before {
+  opacity: 1;
+}
+
+.project-thumb-text:hover::before{
+  opacity: 1;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--modal-background);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 528px;
+  min-width: 581px;
+  background-color: var(--white-color);
+  padding: 10px;
 }
