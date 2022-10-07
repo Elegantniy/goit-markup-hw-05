@@ -288,6 +288,7 @@ body {
 
 .about-thumb {
   position: relative;
+  max-height: 294px;
 }
 
 .about-text {
@@ -296,8 +297,8 @@ body {
   left: 0;
   background-color: var(--features-info-bckg);
   width: 100%;
-  height: 70px;
-  margin-bottom: 0;
+  max-height: 70px;
+  margin: 0;
   padding: 27px 0;
   font-weight: 700;
   line-height: 1.14;
@@ -591,6 +592,7 @@ body {
 
 .project-thumb {
   position: relative;
+  overflow: hidden;
 }
 
 .project-overlay-text {
@@ -611,11 +613,16 @@ body {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.55;
-  opacity: 0;
+
+  transform:translateY(100%);
+  transition-property: transform;
+  transition-duration: 1000ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project-overlay-text:hover, .project-overlay-text:focus {
-  opacity: 1;
+.project-link:hover .project-overlay-text,
+.project-link:focus .project-overlay-text {
+  transform: translateY(0%);
 }
 
 /* Modal */
@@ -640,4 +647,23 @@ body {
   min-width: 581px;
   background-color: var(--white-color);
   padding: 10px;
+}
+
+.modal-close-img {
+  height: 11px;
+  width: 11px;
+  fill: var(--black-color);
+}
+.modal-close {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: var(--white-color);
+  color: var(--black-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
 }
